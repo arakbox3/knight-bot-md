@@ -81,16 +81,7 @@ const question = (text) => {
 
 async function startXeonBotInc() {
     try {
-        let { version, isLatest } = await fetchLatestBaileysVersion()-
-        if (process.env.SESSION_ID) {
-            if (!fs.existsSync('./session')) {
-                fs.mkdirSync('./session', { recursive: true });
-            }
-            
-            fs.writeFileSync('./session/creds.json', process.env.SESSION_ID);
-            console.log(chalk.green('✅ Session creds loaded from GitHub Secrets'));
-        }
-
+        let { version, isLatest } = await fetchLatestBaileysVersion()
         const { state, saveCreds } = await useMultiFileAuthState(`./session`)
         const msgRetryCounterCache = new NodeCache()
 
@@ -268,7 +259,7 @@ async function startXeonBotInc() {
                         isForwarded: true,
                         forwardedNewsletterMessageInfo: {
                             newsletterJid: '120363161513685998@newsletter',
-                            newsletterName: 'Vijay MD',
+                            newsletterName: 'KnightBot MD',
                             serverMessageId: -1
                         }
                     }
@@ -283,7 +274,7 @@ async function startXeonBotInc() {
             console.log(chalk.magenta(`\n${global.themeemoji || '•'} YT CHANNEL: MR UNIQUE HACKER`))
             console.log(chalk.magenta(`${global.themeemoji || '•'} GITHUB: mrunqiuehacker`))
             console.log(chalk.magenta(`${global.themeemoji || '•'} WA NUMBER: ${owner}`))
-            console.log(chalk.magenta(`${global.themeemoji || '•'} CREDIT: MR Vishnu ))
+            console.log(chalk.magenta(`${global.themeemoji || '•'} CREDIT: MR UNIQUE HACKER`))
             console.log(chalk.green(`${global.themeemoji || '•'} 🤖 Bot Connected Successfully! ✅`))
             console.log(chalk.blue(`Bot Version: ${settings.version}`))
         }
@@ -398,6 +389,3 @@ fs.watchFile(file, () => {
     delete require.cache[file]
     require(file)
 })
-
-
-
